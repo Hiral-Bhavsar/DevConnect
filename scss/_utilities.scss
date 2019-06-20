@@ -1,0 +1,122 @@
+//Container
+.container {
+  max-width: $max-width;
+  padding: 0 2rem;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  .lead {
+    color: #333333;
+  }
+}
+//text styles
+.x-large {
+  font-size: 3rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.lead {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #cccccc;
+}
+.text-primary {
+  color: $primary-color;
+  margin-bottom: 0.5rem; 
+}
+
+// Backgrounds
+.bg {
+  &-primary {
+      @include set_background($primary-color);
+  }
+  &-dark {
+      @include set_background($dark-color);
+  }
+  &-success {
+      @include set_background($success-color);
+  }
+  &-danger {
+      @include set_background($danger-color);
+  }
+  &-light {
+      @include set_background($light-color);
+  }
+}
+
+//buttons
+.btn {
+  padding: 10px;
+  background-color: coral;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  border: 1px solid coral;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &.btn-primary {
+      @include set_background($primary-color);
+      color: #000000;
+      border: 1px solid $primary-color;
+      
+      &:hover {
+          background: lighten($primary-color, 5%);
+      }
+  }
+
+  &.btn-dark {
+      @include set_background($success-color);
+      color: #000000;
+      border: 1px solid $success-color;
+      
+      &:hover {
+          background: lighten($success-color, 2%);
+      }
+  }
+  &:hover {
+      background: lighten(coral, 8%);
+  }
+
+}
+
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+//Alerts
+.alert {
+  padding: 0.2rem 0.8rem;
+  margin: 1rem;
+  opacity: 0.9;
+  background-color: $light-color;
+
+  // p {
+  //   color: #ffffff;
+  // }
+
+  &.alert-primary {
+    @include set_background($primary-color);
+  }
+  &.alert-dark {
+    @include set_background($dark-color);
+  }
+  &.alert-success {
+    @include set_background($success-color);
+  }
+  &.alert-danger {
+    @include set_background($danger-color);
+  }
+}
